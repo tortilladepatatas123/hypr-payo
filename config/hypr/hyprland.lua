@@ -257,7 +257,7 @@ local mainMod = "SUPER"
 -- Atajos de aplicaciones y scripts principales.
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/biel/.config/rofi/lista_apps.sh"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 
 -- Cierre del compositor.
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
@@ -269,7 +269,7 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", actio
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 
 -- Capturas de pantalla.
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("export HYPRSHOT_DIR='/home/biel/Screenshots/' && hyprshot -m region"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("export HYPRSHOT_DIR='$HOME/Screenshots/' && hyprshot -m region"))
 
 -- Cambiar el enfoque de ventanas vía flechas direccionales.
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -279,7 +279,7 @@ hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
 -- Navegación entre espacios · mainMOD + [1 - 10] = cambiar al espacio · mainMOD + SHIFT + [1 - 10] = enviar ventana a otro espacio.
 for i = 1, 10 do
-    local key = i % 10 -- 10 maps to key 0
+    local key = i % 10
     hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
     hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
 end
