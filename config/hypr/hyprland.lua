@@ -1,27 +1,6 @@
----------------------
----- MI HYPRLAND ----
----------------------
-
----------------------
----- RENDERIZADO ----
----------------------
-
--- Renderizado de Rocket League.
-hl.config({
-    xwayland = {
-        force_zero_scaling = true
-    }
-})
-
-hl.window_rule({
-    name = "rocketleague-fix",
-    match = { class = "rocketleague%.exe" },
-    float = true,
-    border_size = 0,
-    size = "2560 1440", 
-    center = true,
-    immediate = true
-})
+------------------
+---- HYPRLAND ----
+------------------
 
 ---------------------------------------
 ---- DEMONIOS E INICIO AUTOMÁTICO  ----
@@ -34,11 +13,7 @@ hl.on("hyprland.start", function()
    hl.exec_cmd("thunar --daemon")
 end)
 
--- Demonio de awww · Fondo de pantalla.
-hl.on("hyprland.start", function ()
-    hl.exec_cmd("awww-daemon")
-    hl.exec_cmd("sleep 0.5 && awww img /home/biel/Wallpaper/botw.jpg")    
-end)
+-- Aquí irá tu demonio de fondo de pantalla si lo necesitas. También puedes añadir otros demonios.
 
 -- Activar la transparencia y el blur en la capa de Waybar
 hl.layer_rule({
@@ -58,40 +33,17 @@ end)
 ---- MONITORES ----
 -------------------
 
--- Monitor principal · DP-1.
-hl.monitor({
-    output         = "DP-1",
-    mode           = "2560x1440@180",
-    position       = "0x0",
-    scale          = 1,
-    bitdepth       = 10,
-    supports_hdr   = 1,
-})
+-- Aquí incuirás tus monitores, utilizando el comando hyprctl monitors. 
+-- Aquí puedes ver la wiki de Hyprland: https://wiki.hypr.land/Configuring/Basics/Monitors/
 
--- Monitor secundario · HDMI-A-1.
-hl.monitor({
-    output   = "HDMI-A-1",
-    mode     = "1920x1080@75",
-    position = "2560x360", 
-    scale    = 1,
-})
+--------------------
+---- PROGRAMAS  ----
+--------------------
 
--- Variables de renferizado globales.
-hl.config({
-    render = {
-        cm_enabled     = true,
-        cm_auto_hdr    = 1,
-        direct_scanout = true
-    }
-})
-
----------------------
----- PROGRAMAS  -----
----------------------
-
--- Programas predeterminados.
+-- Programas predeterminados. Como también decidí añadir la configuración de Kitty, la dejé como predeterminada.
+-- En cambio, fileManager decidí dejarlo vacío. Puedes cambiarlo a tu gusto.
 local terminal    = "kitty"
-local fileManager = "thunar"
+local fileManager = "..."
 local menu        = "rofi"
 
 -------------------------------
@@ -298,6 +250,8 @@ hl.device({
 ---- ATAJOS ----
 ----------------
 
+-- Los atajos son modificables. Aquí tienes más información: https://wiki.hypr.land/Configuring/Basics/Binds/
+
 local mainMod = "SUPER"
 
 -- Atajos de aplicaciones y scripts principales.
@@ -395,12 +349,3 @@ hl.window_rule({
 
     no_focus = true,
 })
-
--- Las reglas devuelven una configuración para activarse / desactivarse.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
--- overlayLayerRule:set_enabled(false)
--- suppressMaximizeRule:set_enabled(false)
