@@ -14,7 +14,14 @@
 
 ## Cómo se ve
 
-<img width="2559" height="1440" alt="imagen" src="https://github.com/user-attachments/assets/444dab14-4b0e-48d9-b0e9-1c27adbd4260" />
+### Escritorio
+<img width="2560" height="1440" alt="imagen" src="https://github.com/user-attachments/assets/444dab14-4b0e-48d9-b0e9-1c27adbd4260" />
+
+### Terminal
+<img width="2560" height="1440" alt="imagen" src="https://github.com/user-attachments/assets/2e744809-73fd-4715-a9d2-c1bcbaf84710" />
+
+### Rofi
+<img width="2560" height="1440" alt="imagen" src="https://github.com/user-attachments/assets/c097aec0-09aa-4686-9e00-26d020dde281" />
 
 ---
 
