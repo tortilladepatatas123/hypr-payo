@@ -17,7 +17,7 @@ window {
     background-color:    @bg-transparent;
     border:              1px;
     border-color:        rgba(255, 255, 255, 0.1);
-    border-radius:       12px; /* Redondeado general aumentado */
+    border-radius:       12px;
     width:               500px;
     padding:             20px;
 }
@@ -29,7 +29,7 @@ mainbox {
 
 inputbar {
     background-color:    rgba(255, 255, 255, 0.05);
-    border-radius:       8px; /* Ajustado en proporción */
+    border-radius:       8px;
     padding:             8px 12px;
     children:            [ entry ]; 
 }
@@ -49,7 +49,7 @@ listview {
 
 element {
     padding:             8px;
-    border-radius:       6px; /* Esquinas suavizadas para los elementos internos */
+    border-radius:       6px;
     children:            [ element-icon, element-text ];
 }
 
