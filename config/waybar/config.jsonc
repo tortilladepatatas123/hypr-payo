@@ -1,0 +1,75 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 32, // <- Subido a 32 para que no haya conflictos visuales
+    "margin-top": 15,
+    "margin-left": 15,
+    "margin-right": 15,
+    "margin-bottom": 0,
+
+    "modules-left": ["custom/music"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "memory", "network", "pulseaudio"],
+
+"custom/music": {
+    "format": "  {}",
+    "escape": true,
+    "interval": 1,
+    "exec": "playerctl metadata --format '{{ title }}  •  {{ artist }}' 2> /dev/null || echo 'No se está reproduciendo nada'",
+    "tooltip": false,
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "smooth-scrolling-threshold": 1.0
+},
+
+    "clock": {
+        "interval": 1,
+        "format": "  {:%H:%M:%S}",
+        "format-alt": "  {:%Y — %m — %d}",
+        "tooltip": false
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": "  {usage} %",
+        "tooltip": false
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "  {used:0.1f} GB",
+        "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀  Conectado — vía cable",
+        "format-disconnected": "  Sin conexión",
+        "tooltip-format": "{ifname} — {gwaddr}",
+	"tooltip-format-wifi": "IP — {ipaddr}  •  {signalStrength} %",
+        "max-length": 30
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume} %",
+        "format-muted": "  Silenciado",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "tooltip": true,
+	"tooltip-format": " Salida — {desc}\n\n Entrada — {source_desc}  •  {source_volume} %"
+
+    }
+}
