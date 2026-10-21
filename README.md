@@ -39,6 +39,24 @@ Para evitar problemas y tener un escritorio payo, mantén el siguiente orden en 
 └── rofi/
     └── theme.rasi
 ```
+---
+
+## Requisitos previos
+
+Para que los iconos, glifos y tipografías de Waybar y Rofi se rendericen correctamente, es indispensable tener instalada la fuente **JetBrainsMono Nerd Font**.
+
+Puedes instalarla en tu distribución GNU / Linux con los comandos a continuación.
+
+* **Arch Linux y basados**
+  ```bash
+  sudo pacman -S ttf-jetbrains-mono-nerd
+  ```
+
+* **Fedora**
+  ```bash
+  sudo dnf copr enable bounding/nerd-fonts
+  sudo dnf install nerd-fonts-JetBrainsMono
+  ```
 
 ---
 
