@@ -6,7 +6,6 @@
     min-height: 0;
 }
 
-/* El contenedor principal distribuye de forma milimétrica los extremos mediante padding lateral */
 window#waybar {
     background-color: transparent;
     color: #ffffff;
@@ -14,29 +13,27 @@ window#waybar {
     padding-right: 16px;
 }
 
-/* Configuración matemática de tus nuevas cápsulas circulares con blur */
 #custom-music,
 #clock,
 #cpu,
 #memory,
 #network,
 #pulseaudio {
-    padding: 6px 16px;       /* Un pelín más de padding horizontal para equilibrar el óvalo */
-    margin: 0px 5px;         /* Espaciado regular y milimétrico entre píldoras */
-    border-radius: 10px;    /* Redondeo al 100px solicitado */
+    padding: 6px 16px;
+    margin: 0px 5px;
+    border-radius: 10px;
     font-weight: bold;
     background-color: rgba(26, 27, 28, 0.55); 
     color: #ffffff; 
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Efecto hover interactivo manteniendo el blur masivo encendido */
 #custom-music:hover,
 #clock:hover,
 #cpu:hover,
 #memory:hover,
 #network:hover,
 #pulseaudio:hover {
-    background-color: rgba(44, 46, 51, 0.75); /* Tono Tokyo Night un poco más claro y denso */
-    border: 1px solid rgba(255, 255, 255, 0.25); /* Ilumina el borde sutilmente al pasar el cursor */
+    background-color: rgba(44, 46, 51, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
